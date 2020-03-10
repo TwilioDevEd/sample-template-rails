@@ -53,6 +53,7 @@ We can render UML diagrams using [Mermaid](https://mermaidjs.github.io/).
 ### Requirements
 
 - [Ruby](https://www.ruby-lang.org/en/) version 2.6 or newer
+- [SQLite](https://www.sqlite.org/index.html) which is the default DBMS for Rails 6.
 - [Bundler](https://bundler.io/)
 - A Twilio account - [sign up](https://www.twilio.com/try-twilio)
 
@@ -70,7 +71,7 @@ all the config values we need to run the application:
 
 ### Local development
 
-Before diving into the setup, it is **RECOMMENDED** to run Ruby with a version manager such as [`rbenv`](https://github.com/rbenv/rbenv) or [`asdf`](https://github.com/asdf-vm/asdf). This is specially important for MacOS users since OSX comes with a preinstalled Ruby version (usually an older version than the current) which may not be compatible with the new Rails 6 and it's generally better not to mess up with system packages.
+Before diving into the setup, it is **RECOMMENDED** to use Ruby with a version manager such as [`rbenv`](https://github.com/rbenv/rbenv) or [`asdf`](https://github.com/asdf-vm/asdf). This is specially important for MacOS users since OSX comes with a preinstalled Ruby version (usually an older version than the current) which may not be compatible with the new Rails 6 and it's generally better not to mess with system packages.
 
 After the above requirements have been met:
 

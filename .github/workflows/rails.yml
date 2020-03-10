@@ -3,14 +3,15 @@ name: Rails CI
 on: [push, pull_request]
 
 jobs:
-  build:
+  build-linux:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest]
+        os: [ubuntu-latest]
         ruby: [ '2.6', '2.7' ]
 
     steps:
+      - run: sudo apt update -y; sudo apt install -y libsqlite3-dev
       - uses: actions/checkout@v2
       - name: Use Ruby ${{ matrix.ruby }}
         uses: actions/setup-ruby@v1
@@ -24,19 +25,19 @@ jobs:
         env:
           RAILS_ENV: test
 
-  build-windows:
-    runs-on: windows-latest
+  # build-windows:
+  #   runs-on: windows-latest
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Ruby ${{ matrix.ruby }}
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6
-      - name: bundle install and tests
-        run: |
-          gem install bundler
-          bundle install
-          bundle exec rspec
-        env:
-          RAILS_ENV: test
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Use Ruby ${{ matrix.ruby }}
+  #       uses: actions/setup-ruby@v1
+  #       with:
+  #         ruby-version: 2.6
+  #     - name: bundle install and tests
+  #       run: |
+  #         gem install bundler
+  #         bundle install
+  #         bundle exec rspec
+  #       env:
+  #         RAILS_ENV: test
