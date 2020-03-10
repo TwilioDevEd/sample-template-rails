@@ -11,14 +11,23 @@ jobs:
         ruby: [ '2.6', '2.7' ]
 
     steps:
-      - run: sudo apt update -y; sudo apt install -y libsqlite3-dev
-      - uses: actions/checkout@v2
-      - name: Use Ruby ${{ matrix.ruby }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Ruby ${{ matrix.ruby }}
         uses: actions/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+      - name: Ruby gem cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
       - name: bundle install and tests
         run: |
+          sudo apt install -yqq libsqlite3-dev
+          cp .env.example .env
           gem install bundler
           bundle install
           bundle exec rspec
