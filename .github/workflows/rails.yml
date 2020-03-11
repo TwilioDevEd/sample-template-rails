@@ -3,18 +3,22 @@ name: Rails CI
 on: [push, pull_request]
 
 jobs:
-  build-linux:
+  build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
         ruby: [ '2.6', '2.7' ]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install SQLite
+      - name: Install SQLite (Ubuntu)
+        if: runner.os == 'Linux'
         run: sudo apt install -yqq libsqlite3-dev
+      - name: Install SQLite (OSX)
+        if: runner.os == 'macOs'
+        run: brew install sqlite3
       - name: Setup Ruby ${{ matrix.ruby }}
         uses: actions/setup-ruby@v1
         with:

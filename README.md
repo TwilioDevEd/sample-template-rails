@@ -55,6 +55,7 @@ We can render UML diagrams using [Mermaid](https://mermaidjs.github.io/).
 - [Ruby](https://www.ruby-lang.org/en/) version 2.6 or newer
 - [SQLite](https://www.sqlite.org/index.html) which is the default DBMS for Rails 6.
 - [Bundler](https://bundler.io/)
+- [Node.js](https://nodejs.org/) - Rails 6 now uses webpack to serve frontend assets, so it needs Node to install it.
 - A Twilio account - [sign up](https://www.twilio.com/try-twilio)
 
 ### Twilio Account Settings
@@ -82,25 +83,31 @@ After the above requirements have been met:
   cd sample-template-rails
   ```
 
-2. Install dependencies
+2. Install gem dependencies
 
   ```bash
   bundle install
   ```
 
-3. Set your environment variables
+3. Install Node dependencies:
+
+  ```bash
+  npm install
+  ```
+
+4. Set your environment variables
 
   ```bash
   cp .env.example .env
   ```
   See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables.
 
-4. Configure pre-commit hooks
+5. Configure pre-commit hooks
 ```bash
 bundle exec overcommit --install
 ```
 
-5. Run the application
+6. Run the application
 
   ```bash
   bundle exec rails s
@@ -110,7 +117,7 @@ bundle exec overcommit --install
   bundle exec rails s -e development
   ```
 
-6. Navigate to [http://localhost:3000](http://localhost:3000)
+7. Navigate to [http://localhost:3000](http://localhost:3000)
 
 That's it!
 
