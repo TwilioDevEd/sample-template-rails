@@ -32,7 +32,8 @@ We can render UML diagrams using [Mermaid](https://mermaidjs.github.io/).
 ## Features
 
 - [Ruby on rails](https://rubyonrails.org/) framework version 6
-- User interface to send SMS.
+- Node.js for serving frontend assets with [webpack](https://webpack.js.org/)
+- User interface to send SMS with bootstrap.
 - Unit tests using [`Rspec`](https://rspec.info/)
 - End to End UI testing using [Capybara](https://github.com/teamcapybara/capybara)
 - [Automated CI testing using GitHub Actions](/.github/workflows/rails.yml)
@@ -52,7 +53,8 @@ We can render UML diagrams using [Mermaid](https://mermaidjs.github.io/).
 
 ### Requirements
 
-- [Ruby](https://www.ruby-lang.org/en/) version 2.6 or newer
+- [Ruby](https://www.ruby-lang.org/en/) version **2.6.x**.
+> **Important:** As of today, the latest stable version of Ruby (2.7.0) is not compatible with Rails 6 on Windows hosts. It works fine for Linux and MacOS users, but to preserve compatibility across all environments the version will be set to 2.6.5.
 - [SQLite](https://www.sqlite.org/index.html) which is the default DBMS for Rails 6.
 - [Bundler](https://bundler.io/)
 - [Node.js](https://nodejs.org/) - Rails 6 now uses webpack to serve frontend assets, so it needs Node to install it.
