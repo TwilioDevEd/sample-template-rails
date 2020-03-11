@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
         ruby: [ '2.6', '2.7' ]
 
     steps:
@@ -19,6 +19,11 @@ jobs:
       - name: Install SQLite (OSX)
         if: runner.os == 'macOs'
         run: brew install sqlite3
+      - name: Install SQLite (Windows)
+        if: runner.os == 'Windows'
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: install sqlite
       - name: Setup Ruby ${{ matrix.ruby }}
         uses: actions/setup-ruby@v1
         with:
@@ -58,20 +63,3 @@ jobs:
           bundle exec rspec
         env:
           RAILS_ENV: test
-
-  # build-windows:
-  #   runs-on: windows-latest
-
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Use Ruby ${{ matrix.ruby }}
-  #       uses: actions/setup-ruby@v1
-  #       with:
-  #         ruby-version: 2.6
-  #     - name: bundle install and tests
-  #       run: |
-  #         gem install bundler
-  #         bundle install
-  #         bundle exec rspec
-  #       env:
-  #         RAILS_ENV: test
