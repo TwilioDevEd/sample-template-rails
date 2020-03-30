@@ -1,0 +1,16 @@
+{
+  "install": "gem install bundler && bundle install && yarn install",
+  "start": "bundle exec rails s",
+  "watch": {
+    "install": {
+      "include": [
+        "^Gemfile$"
+      ]
+    },
+    "restart": {
+      "include": [
+        "\\.rb$"
+      ]
+    }
+  }
+}
