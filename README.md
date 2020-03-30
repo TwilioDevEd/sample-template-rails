@@ -140,8 +140,11 @@ Please be aware that some of these might charge you for the usage or might make 
 | Service                           |                                                                                                                                                                                                                           |
 | :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Heroku](https://www.heroku.com/) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TwilioDevEd/sample-template-rails/tree/master)                                                                                                                                       |
-| [Glitch](https://glitch.com)      | [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/TwilioDevEd/sample-template-rails.git) |
-| [Zeit](https://zeit.co/)          | [![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/TwilioDevEd/sample-template-rails/tree/master)                                                                 |
+
+**Some notes:** 
+- [Heroku does not support SQLite](https://devcenter.heroku.com/articles/sqlite3), so if you want to deploy to Heroku you need to make the necessary changes on the project to use Postgres instead of SQLite.
+- [Glitch](https://glitch.com/) is not included because it only supports NodeJS officially (but unofficially it supports many other languages, including Ruby). Moreover, Glitch includes an old version of Ruby (2.3) which has reached its [end of life](https://www.ruby-lang.org/en/news/2019/03/31/support-of-ruby-2-3-has-ended/) and it's not supported by this project.
+- [Zeit Now](https://zeit.co) is also not included because it uses a serverless architecture which doesn't work with frameworks such as Rails.
 
 ## Resources
 
