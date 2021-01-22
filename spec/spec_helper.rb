@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
+=======
+>>>>>>> Update to Rails 6.1
 require 'capybara/rspec'
 
 Capybara.default_driver = :selenium_chrome_headless

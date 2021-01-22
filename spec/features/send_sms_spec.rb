@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
+=======
+>>>>>>> Update to Rails 6.1
 require 'rails_helper'
 
 RSpec.describe 'User sends an SMS Message', type: :feature do
