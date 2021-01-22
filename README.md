@@ -57,7 +57,7 @@ We can render UML diagrams using [Mermaid](https://mermaidjs.github.io/).
 > **Important:** As of today, the latest stable version of Ruby (2.7.0) is not compatible with Rails 6 on Windows hosts. It works fine for Linux and MacOS users, but to preserve compatibility across all environments the version will be set to 2.6.5.
 - [SQLite](https://www.sqlite.org/index.html) which is the default DBMS for Rails 6.
 - [Bundler](https://bundler.io/)
-- [Node.js](https://nodejs.org/) - Rails 6 now uses webpack to serve frontend assets, so it needs Node to install it.
+- [Node.js](https://nodejs.org/) version **14.15.4** - Rails 6 now uses webpack to serve frontend assets, so it needs Node to install it.
 - A Twilio account - [sign up](https://www.twilio.com/try-twilio)
 
 ### Twilio Account Settings
@@ -143,8 +143,6 @@ Please be aware that some of these might charge you for the usage or might make 
 
 **Some notes:** 
 - [Heroku does not support SQLite](https://devcenter.heroku.com/articles/sqlite3), so if you want to deploy to Heroku you need to make the necessary changes on the project to use Postgres instead of SQLite.
-- [Glitch](https://glitch.com/) is not included because it only supports NodeJS officially (but unofficially it supports many other languages, including Ruby). Moreover, Glitch includes an old version of Ruby (2.3) which has reached its [end of life](https://www.ruby-lang.org/en/news/2019/03/31/support-of-ruby-2-3-has-ended/) and it's not supported by this project.
-- [Zeit Now](https://zeit.co) is also not included because it uses a serverless architecture which doesn't work with frameworks such as Rails.
 
 ## Resources
 
