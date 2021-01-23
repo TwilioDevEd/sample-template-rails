@@ -53,9 +53,7 @@ We can render UML diagrams using [Mermaid](https://mermaidjs.github.io/).
 
 ### Requirements
 
-- [Ruby](https://www.ruby-lang.org/en/) version **2.6.x**.
-> **Important:** As of today, the latest stable version of Ruby (2.7.0) is not compatible with Rails 6 on Windows hosts. It works fine for Linux and MacOS users, but to preserve compatibility across all environments the version will be set to 2.6.5.
-- [SQLite](https://www.sqlite.org/index.html) which is the default DBMS for Rails 6.
+- [Ruby](https://www.ruby-lang.org/en/) version **3.0.x** or later.
 - [Bundler](https://bundler.io/)
 - [Node.js](https://nodejs.org/) version **14.15.4** - Rails 6 now uses webpack to serve frontend assets, so it needs Node to install it.
 - A Twilio account - [sign up](https://www.twilio.com/try-twilio)
