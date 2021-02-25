@@ -4,7 +4,7 @@
  
 # Twilio Sample App Template
 
-[![Actions Status](https://github.com/TwilioDevEd/sample-template-rails/workflows/Rails%20CI/badge.svg)](https://github.com/TwilioDevEd/sample-template-rails/actions)
+![](https://github.com/TwilioDevEd/sample-template-rails/actions/workflows/build.yml/badge.svg)
 
 ## About
 
