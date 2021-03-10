@@ -1,18 +1,17 @@
 {
-  "name": "sample_template_rails",
+  "name": "sample-template-rails",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.2.2",
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "@rails/webpacker": "5.2.1",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.10.3"
+    "sass": "^1.32.5",
+    "webpack-dev-server": "^3.11.2"
   }
 }
